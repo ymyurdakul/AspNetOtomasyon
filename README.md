@@ -27,7 +27,7 @@ Uygulamalarıma ait bazı ekran alıntıları görülmektedir. <br/>
 
 
 *******************************************************************************************************************************************************************************
-
+<br/>
 
 ![1](https://user-images.githubusercontent.com/35013722/97540364-98aa7080-19d4-11eb-99d5-7bd90143e91a.PNG)
 ![2](https://user-images.githubusercontent.com/35013722/97540366-99db9d80-19d4-11eb-8d8a-d44d1cd11ddc.PNG)
@@ -40,6 +40,5 @@ Uygulamalarıma ait bazı ekran alıntıları görülmektedir. <br/>
 ![9](https://user-images.githubusercontent.com/35013722/97540390-9f38e800-19d4-11eb-892d-948c6a91d13e.PNG)
 ![10](https://user-images.githubusercontent.com/35013722/97540392-9fd17e80-19d4-11eb-8aa1-83c94c0cc2d5.PNG)
 ![11](https://user-images.githubusercontent.com/35013722/97540395-a102ab80-19d4-11eb-972a-5e44595bfad0.PNG)
-![13](https://user-images.githubusercontent.com
 ![12](https://user-images.githubusercontent.com/35013722/97540399-a102ab80-19d4-11eb-9fee-1fc2163b0b10.PNG)
-/35013722/97540359-96e0ad00-19d4-11eb-8a6a-c09071838805.PNG)
+![13](https://user-images.githubusercontent.com/35013722/97540359-96e0ad00-19d4-11eb-8a6a-c09071838805.PNG)
