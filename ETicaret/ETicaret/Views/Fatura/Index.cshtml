@@ -1,0 +1,117 @@
+﻿@model IEnumerable<ETicaret.Models.Fatura>
+
+<p>
+    @Html.ActionLink("Yeni Fatura", "FaturaEkle")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FaturaSeriNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FaturaSıraNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VergiDairesi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Saat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeslimEden)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeslimAlan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Toplam)
+        </th>
+        <th>
+            Güncelle
+        </th>
+        <th>
+            Detaylar
+        </th>
+        <th>
+            Sil
+        </th>
+        <th>
+            Kalem
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.FaturaSeriNo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FaturaSıraNo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Tarih)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.VergiDairesi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Saat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TeslimEden)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TeslimAlan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Toplam)
+    </td>
+    <td> 
+        @Html.ActionLink("Güncelle", "FaturaGuncelle", new { id = item.FaturaID }) 
+    </td>
+    <td>
+        @Html.ActionLink("Detaylar", "Detaylar", new { id = item.FaturaID }) 
+    </td>
+    <td>
+        @Html.ActionLink("Sil", "Sil", new { id = item.FaturaID })
+
+    </td>
+    <td>
+        <button type="button" data-toggle="modal" data-target="#modal@(item.FaturaID)" class="btn btn-link">
+            Kalem
+        </button>
+        <div class="modal" id="modal@(item.FaturaID)">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h6 class="modal-title">
+
+                            Fatura Kalemleri
+                        </h6>
+                    </div>
+                    <div class="modal-body ">
+                        @Html.Partial("_FaturaKalemler", item.FaturaKalems)
+                    </div>
+                    <button data-dismiss="modal" class="btn btn-danger btn-sm">
+                        Kapat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </td>
+   
+
+   
+
+
+
+
+</tr>
+}
+
+</table>
+
+

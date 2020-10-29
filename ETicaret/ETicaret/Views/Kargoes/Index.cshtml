@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ETicaret.Models.Kargo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row p-1">
+    <div class="col-md-3">
+        <form method="get">
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Kargo Numarası" name="key">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Ara</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Acıklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TakipKodu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Personel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Alıcı)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Acıklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TakipKodu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Personel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alıcı)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tarih)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = item.KargoId }) |
+                @Html.ActionLink("Detaylar", "Details", new { id = item.KargoId }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.KargoId }) |
+                @Html.ActionLink("Kargo Takip", "KargoDetay", new { TakipKodu = item.TakipKodu })
+
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Yeni Kargo", "Create")
+</p>

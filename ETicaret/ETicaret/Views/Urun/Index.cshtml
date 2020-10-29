@@ -1,0 +1,90 @@
+﻿@model List<ETicaret.Models.Urun>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            ÜRÜN
+        </th>
+        <th>
+            MARKA
+        </th>
+        <th>
+            STOK
+        </th>
+        <th>
+            ALIS FİYAT
+        </th>
+        <th>
+            SATIS FİYAT
+        </th>
+
+        <th>
+            KATEGORİ
+        </th>
+        <th>
+            GORSEL
+        </th>
+        <th>
+            Sil
+        </th>
+        <th>
+            Güncelle
+        </th>
+        <th>
+            Detaylar
+        </th>
+        <th>
+            Satış
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @item.UrunId
+    </td>
+    <td>
+        @item.UrunAd
+    </td>
+    <td>
+        @item.Marka
+    </td>
+    <td>
+        @item.Stok
+    </td>
+    <td>
+        @item.AlısFiyat
+    </td>
+    <td>
+        @item.SatısFiyat
+    </td>
+    <td>
+        @item.Kategori.KategoriAd
+    </td>
+    <td>
+        @item.UrunGorsel
+    </td>
+    <td>
+        <a href="/Urun/Sil/@item.UrunId">Sil</a>
+    </td>
+    <td>
+        <a href="/Urun/UrunGetir/@item.UrunId">Güncelle</a>
+    </td>
+    <td>
+        <a href="/Urun/UrunDetay/@item.UrunId">Detaylar</a>
+
+    </td>
+    <td>
+        <a href="/Urun/SatısYap/@item.UrunId">Satış Yap</a>
+
+    </td>
+</tr>
+    }
+
+</table>
+<a class="btn btn-primary" href="/Urun/YeniUrun">
+    Yeni Ürün
+</a>

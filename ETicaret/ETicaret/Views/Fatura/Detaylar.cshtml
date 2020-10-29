@@ -1,0 +1,132 @@
+﻿@model ETicaret.Models.Fatura
+
+ 
+
+<!DOCTYPE html>
+
+ 
+    <div>
+        <h4>Fatura</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FaturaSeriNo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FaturaSeriNo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.FaturaSıraNo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FaturaSıraNo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Tarih)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Tarih)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.VergiDairesi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.VergiDairesi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Saat)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Saat)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TeslimEden)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TeslimEden)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TeslimAlan)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TeslimAlan)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Toplam)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Toplam)
+            </dd>
+            
+    
+        </dl>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Kalem Id
+                </th>
+                <th>
+                    Açıklama
+                </th>
+                <th>
+                    Miktar
+                </th>
+                <th>
+                    Birim
+                </th>
+                <th>
+                    Tutar
+                </th>
+                <th>
+                    Fatura 
+                </th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.FaturaKalems)
+        {
+    <tr>
+        <th>
+            @item.FaturaKalemId
+        </th>
+        <th>
+            @item.Acıklama
+        </th>
+        <th>
+            @item.Miktar
+
+        </th>
+        <th>
+            @item.BirimFiyat
+        </th>
+        <th>
+            @item.Tutar
+
+        </th>
+        <th>
+            @item.Fatura.TeslimEden
+        </th>
+    </tr>
+        }
+    </table>
+
+    <p>
+         @Html.ActionLink("Yeni Kalem Ekle", "KalemEkle",routeValues:new {id=@Model.FaturaID })
+    </p>
+ 

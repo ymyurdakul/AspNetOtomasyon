@@ -1,0 +1,42 @@
+﻿
+@model List<ETicaret.Models.Departman>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+ 
+
+<table class="table">
+    <tr>
+        <th>
+          ID
+        </th>
+        <th>
+            Ad
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmanID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmanAd)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "/DepartmanGetir", routeValues: new { id = item.DepartmanID }) |
+                @Html.ActionLink("Detay", "/DepartmanDetay", routeValues: new { id = item.DepartmanID }) |
+                @Html.ActionLink("Sil", "/DepartmanSil", routeValues: new { id = item.DepartmanID })
+
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Departman Ekle", "DepartmanEkle")
+</p>

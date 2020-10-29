@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ETicaret.Models.SatisHareket>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cari.CariAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Personel.PersonelAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Urun.UrunAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToplamTutar)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cari.CariAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Personel.PersonelAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Urun.UrunAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fiyat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToplamTutar)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SatisId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SatisId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SatisId })
+        </td>
+    </tr>
+}
+
+</table>

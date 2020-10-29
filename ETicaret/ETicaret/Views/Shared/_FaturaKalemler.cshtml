@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ETicaret.Models.FaturaKalem>
+ 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fatura.FaturaSeriNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Acıklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Miktar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirimFiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tutar)
+        </th>
+      
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fatura.FaturaSeriNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Acıklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Miktar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirimFiyat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tutar)
+        </td>
+  
+    </tr>
+}
+
+</table>

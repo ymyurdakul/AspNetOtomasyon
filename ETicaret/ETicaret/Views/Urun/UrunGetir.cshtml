@@ -1,0 +1,37 @@
+﻿@model ETicaret.Models.Urun
+
+
+@using (Html.BeginForm("UrunGuncelle","Urun"))
+{
+@Html.HiddenFor(x=>x.UrunId)
+@Html.LabelFor(x => x.UrunAd)
+@Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+<br />
+@Html.LabelFor(x => x.Marka)
+@Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+
+
+@Html.LabelFor(x => x.Stok)
+@Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+
+@Html.LabelFor(x => x.AlısFiyat)
+@Html.TextBoxFor(x => x.AlısFiyat, new { @class = "form-control" })
+
+
+@Html.LabelFor(x => x.SatısFiyat)
+@Html.TextBoxFor(x => x.SatısFiyat, new { @class = "form-control" })
+
+
+@Html.LabelFor(x => x.UrunGorsel)
+@Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+
+@Html.LabelFor(x => x.Kategori)
+@Html.DropDownListFor(x => x.KategoriId, (SelectList)ViewBag.items, htmlAttributes: new { @class = "form-control" })
+
+<div class="form-control">
+    @Html.LabelFor(x => x.Durum)
+    @Html.EditorFor(x => x.Durum, new { @class = "form-control" })
+</div>
+
+<input type="submit" class="btn btn-primary" />
+}

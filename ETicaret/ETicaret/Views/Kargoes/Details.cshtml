@@ -1,0 +1,58 @@
+﻿@model ETicaret.Models.Kargo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kargo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Acıklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Acıklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TakipKodu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TakipKodu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Personel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alıcı)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alıcı)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KargoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,64 @@
+﻿ @model ETicaret.Models.SatisHareket
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Urun 
+        </th>
+        <th>
+            Cari 
+        </th>
+        <th>
+            Personel 
+        </th>
+        <th>
+            Fiyat
+        </th>
+        <th>
+            Adet
+        </th>
+        <th>
+            Toplam
+        </th>
+        <th>
+            Tarih
+        </th>
+    </tr>
+    <tr>
+
+        <th>
+            @Model.SatisId
+        </th>
+        <th>
+            @Model.Urun.UrunAd
+        </th>
+        <th>
+            @Model.Cari.CariAd - @Model.Cari.CariSoyad
+        </th>
+        <th>
+            @Model.Personel.PersonelAd - @Model.Personel.PersonelSoyad
+        </th>
+        <th>
+            @Model.Fiyat
+        </th>
+        <th>
+            @Model.Adet
+
+        </th>
+        <th>
+            @Model.ToplamTutar
+
+        </th>
+        <th>
+            @Model.Tarih.ToShortDateString()
+
+        </th>
+
+    </tr>
+</table>
+<a class="btn btn-primary">
+    Yazdır
+</a>

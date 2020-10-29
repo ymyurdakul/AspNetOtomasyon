@@ -1,0 +1,127 @@
+﻿@model IEnumerable<ETicaret.Models.SatisHareket>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+ 
+<p>
+    @Html.ActionLink("Satıs Yap", "Create")
+</p>
+<table class="table table-bordered" id="tbl1">
+    <thead>
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cari.CariAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Personel.PersonelAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Urun.UrunAd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToplamTutar)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cari.CariAd)
+                @Html.DisplayFor(modelItem => item.Cari.CariSoyad)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Personel.PersonelAd)
+                @Html.DisplayFor(modelItem => item.Personel.PersonelSoyad)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Urun.UrunAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToplamTutar)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Edit", new { id = item.SatisId }) |
+                @Html.ActionLink("Detaylar", "Details", new { id = item.SatisId }) |
+                @Html.ActionLink("Sil", "Delete", new { id = item.SatisId }) |
+                @Html.ActionLink("Yazdır", "SatisDetay", new { id = item.SatisId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+
+    $('#tbl1').dataTable({
+        "responsive": true,
+        "dom": '<"html5buttons"B>lTfgitp',
+        "language": {
+            "emptyTable": "Gösterilecek ver yok.",
+            "processing": "Veriler yükleniyor",
+            "sDecimal": ".",
+            "sInfo": "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
+            "sInfoFiltered": "(_MAX_ kayıt içerisinden bulunan)",
+            "sInfoPostFix": "",
+            "sInfoThousands": ".",
+            "sLengthMenu": "Sayfada _MENU_ kayıt göster",
+            "sLoadingRecords": "Yükleniyor...",
+            "sSearch": "Ara:",
+            "sZeroRecords": "Eşleşen kayıt bulunamadı",
+            "oPaginate": {
+                "sFirst": "İlk",
+                "sLast": "Son",
+                "sNext": "Sonraki",
+                "sPrevious": "Önceki"
+            },
+            "oAria": {
+                "sSortAscending": ": artan sütun sıralamasını aktifleştir",
+                "sSortDescending": ": azalan sütun sıralamasını aktifleştir"
+            },
+            "select": {
+                "rows": {
+                    "_": "%d kayıt seçildi",
+                    "0": "",
+                    "1": "1 kayıt seçildi"
+                }
+            }
+        }
+    });
+
+</script>

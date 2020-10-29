@@ -1,0 +1,51 @@
+﻿@model ETicaret.Models.Departman
+
+ 
+ 
+<h2>Departman Detay Sayfası</h2>
+
+<div class="alert alert-secondary">
+    @Model.DepartmanAd
+</div>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            Personel Id
+        </th>
+        <th>
+            Ad
+        </th>
+        <th>
+            Soyad
+        </th>
+        <th>
+            Gorsel
+        </th>
+        <th>
+            Satışlar
+        </th>
+    </tr>
+    @foreach (var item in Model.Personels)
+    {
+        <tr>
+            <th>
+                @item.PersonelId
+            </th>
+            <th>
+                @item.PersonelAd
+            </th>
+            <th>
+                @item.PersonelSoyad
+            </th>
+            <th>
+                @item.PersonelGorsel
+            </th>
+            <th>
+                <a href="/Departman/SatısHareket/@item.PersonelId">Satışlar</a>
+            </th>
+
+        </tr>
+    }
+
+</table>

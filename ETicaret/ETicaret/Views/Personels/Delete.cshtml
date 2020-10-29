@@ -1,0 +1,60 @@
+﻿@model ETicaret.Models.Personel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Personel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Departman.DepartmanAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departman.DepartmanAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonelAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonelSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonelGorsel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonelGorsel)
+        </dd>
+
+    </dl>
+
+    @*@using (Html.BeginForm())*@
+    @*{*@
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" id="btnSil" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    @*}*@
+</div>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+ 

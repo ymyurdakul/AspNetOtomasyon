@@ -1,0 +1,73 @@
+﻿@model List<ETicaret.Models.Cari> 
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Ad
+            </th>
+
+            <th>
+                Soyad
+            </th>
+            <th>
+                Seihir
+            </th>
+            <th>
+                Mail
+            </th>
+            <th>
+                Sil
+            </th>
+            <th>
+                Güncelle
+            </th>
+            <th>
+                Detaylar
+            </th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.CariId
+            </td>
+
+            <td>
+                @item.CariAd
+            </td>
+
+            <td>
+                @item.CariSoyad
+
+            <td>
+                @item.CariSehir
+
+
+            <td>
+                @item.CariMail
+            </td>
+
+            <td>
+                <a href="/Cari/Sil/@item.CariId">Sil</a>
+
+            <td>
+                <a href="/Cari/CariGetir/@item.CariId">Guncelle</a>
+            </td>
+            <td>
+                <a href="/Cari/Detay/@item.CariId">Satıs Gecmisi</a>
+
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+<a href="/Cari/YeniCari">Yeni Cari Ekle</a>

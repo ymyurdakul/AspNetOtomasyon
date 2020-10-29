@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ETicaret.Models.Kategori>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KategoriID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KategoriAd)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KategoriID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KategoriAd)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle", "Edit", routeValues: new { id = item.KategoriID }) |
+                @Html.ActionLink("Detay", "Details", routeValues: new { id = item.KategoriID }) |
+                @Html.ActionLink("Sil", "Delete", routeValues: new { id = item.KategoriID })
+            </td>
+        </tr>
+    }
+
+</table>
+<button type="button" data-toggle="modal" data-target="#modal12" class="btn btn-link">
+    Yeni Kategori
+</button>
+<div class="modal" id="modal12">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">
+
+                    Fatura Kalemleri
+                </h6>
+            </div>
+            <div class="modal-body ">
+                @Html.Partial("_KalemEkle")
+            </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+
+        </div>
+ 
+    </div>
+</div>
+
+
+

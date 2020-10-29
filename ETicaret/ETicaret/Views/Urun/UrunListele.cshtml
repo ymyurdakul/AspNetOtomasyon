@@ -1,0 +1,99 @@
+﻿@model IEnumerable<ETicaret.Models.Urun>
+@{
+    Layout = null;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <table   class="display nowrap" style="width:100%" id="example">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kategori.KategoriAd)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrunAd)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Marka)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Stok)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlısFiyat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SatısFiyat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Durum)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UrunGorsel)
+                </th>
+            
+            </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kategori.KategoriAd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrunAd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marka)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stok)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AlısFiyat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SatısFiyat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Durum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrunGorsel)
+                </td>
+              
+            </tr>
+        }
+
+    </table>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ]
+        });
+    });
+</script>
+
+

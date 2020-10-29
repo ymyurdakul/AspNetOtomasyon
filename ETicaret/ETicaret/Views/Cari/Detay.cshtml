@@ -1,0 +1,80 @@
+﻿@model ETicaret.Models.Cari
+
+<div class="alert alert-secondary">
+    @Model.CariAd  @Model.CariSoyad
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>
+                Satıs Id
+            </td>
+            <td>
+                Tarig
+            </td>
+            <td>
+                Adet
+            </td>
+            <td>
+                Fiyat
+            </td>
+
+            <td>
+                Toplam Tutar
+            </td>
+            <td>
+                Cari
+            </td>
+            <td>
+                Personel
+            </td>
+            <td>
+                Urun
+            </td>
+            <td>
+
+            </td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.SatisHarekets)
+        {
+            <tr>
+                <td>
+                    @item.SatisId
+                </td>
+                <td>
+                    @item.Tarih.ToShortDateString()
+                </td>
+                <td>
+                    @item.Adet
+
+                </td>
+                <td>
+                    @item.Fiyat
+
+                </td>
+
+                <td>
+                    @item.ToplamTutar
+                </td>
+                <td>
+                    @item.Cari.CariAd
+
+                </td>
+                <td>
+                    @item.Personel.PersonelAd
+
+                </td>
+                <td>
+                    @item.Urun.UrunAd
+                </td>
+                <td>
+                    <a href="#" class="btn btn-sm btn-success">Yazdır</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,47 @@
+﻿@model ETicaret.Models.KargoTakip
+
+@{
+    ViewBag.Title = "KargoDetay";
+}
+
+<h2>Kargo Detay</h2>
+
+<div class="card">
+    <div class="row d-flex align-items-center">
+
+        <div class="col-md-3">
+            <img src="@ViewBag.kod" width="200" height="200" />
+        </div>
+        <div class="col-md-4">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.TakipKod)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TakipKod)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Acıklama)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Acıklama)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Tarih)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Tarih)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+
+
+</div>
+ 

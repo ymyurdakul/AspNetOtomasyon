@@ -1,0 +1,80 @@
+﻿@model ETicaret.Models.SatisHareket
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SatisHareket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cari.CariAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cari.CariAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Personel.PersonelAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Personel.PersonelAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Urun.UrunAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Urun.UrunAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ToplamTutar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToplamTutar)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

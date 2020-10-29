@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ETicaret.Models.Personel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+ 
+
+<form method="get" action="/Personels/Index">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Personel ad,soyad..." name="name"  >
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Ara</button>
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Departman.DepartmanAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonelAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonelSoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PersonelGorsel)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departman.DepartmanAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonelAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonelSoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonelGorsel)
+            </td>
+            <td>
+                @Html.ActionLink("Güncelle ", "Edit", new { id = item.PersonelId }) |
+                <a href="/Departman/SatısHareket/@item.PersonelId">Satışlar</a> |
+                @Html.ActionLink("Sil ", "Delete", new { id = item.PersonelId }) |
+                @Html.ActionLink("Cv ", "Details", new { id = item.PersonelId }) |
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+<p>
+    @Html.ActionLink("Yeni  Personel", "Create")
+</p>
+
